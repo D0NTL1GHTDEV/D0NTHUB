@@ -27,3 +27,9 @@ end)
 local LocalPlayerJumpPowerSlider = MainTab:NewSlider("Custom JumpPower:", "", true, "/", {min = 0, max = 500, default = 50}, function(value)
     dwHumanoid.JumpPower = value
 end)
+
+local VisualsTab = Init:NewTab("Visuals")
+
+local ESPSection = VisualsTab:NewSection("ESP")
+
+local HighlightSection = VisualsTab:NewSection("Highlight")
