@@ -12,3 +12,11 @@ local Init = library:Init()
 local MainTab = Init:NewTab("Main")
 
 local LocalPlayerSection = MainTab:NewSection("LocalPlayer")
+
+local OtherTab = Init:NewTab("Other")
+
+local MenuSection = OtherTab:NewSection("Menu")
+
+local UnhookButton = OtherTab:NewButton("Unhook", function()
+    library:Remove()
+end)
