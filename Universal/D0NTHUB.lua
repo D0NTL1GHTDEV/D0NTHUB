@@ -5,7 +5,7 @@ local dwPlayers = game:GetService("Players")
 
 -- Vars:
 local dwLocalPlayer = dwPlayers.LocalPlayer
-local dwHumanoid = dwLocalPlayer.Humanoid
+local dwHumanoid = dwLocalPlayer.Character.Humanoid
 
 library.rank = "developer"
 local wm = library:Watermark("D0NTHUB | alpha build | " .. library:GetUsername() .. " | rank: " .. library.rank)
