@@ -18,5 +18,5 @@ local OtherTab = Init:NewTab("Other")
 local MenuSection = OtherTab:NewSection("Menu")
 
 local UnhookButton = OtherTab:NewButton("Unhook", function()
-    library.screen:Destroy()
+    library.TabLibrary:Remove()
 end)
