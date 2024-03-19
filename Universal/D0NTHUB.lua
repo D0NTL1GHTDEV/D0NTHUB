@@ -33,3 +33,11 @@ local VisualsTab = Init:NewTab("Visuals")
 local ESPSection = VisualsTab:NewSection("ESP")
 
 local HighlightSection = VisualsTab:NewSection("Highlight")
+
+local ScriptLoaderTab = Init:NewTab("Script Loader")
+
+local BasicScriptsSection = ScriptLoaderTab:NewSection("Basic Scripts")
+
+local InfiniteYieldButton = ScriptLoaderTab:NewButton("Infinite Yield", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
