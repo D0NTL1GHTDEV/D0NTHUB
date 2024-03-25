@@ -34,7 +34,7 @@ local CardTab = Init:NewTab("Card")
 local CardSection = CardTab:NewSection("Card")
 
 local ConvertRoCardToShutdownCard = CardTab:NewButton("Convert RO Card To Shutdown KeyCard", function()
-    dwBackpack:WaitForChild("RO Card").Name = "Shutdown Keycard"
     dwBackpack:WaitForChild("RO Card").KeycardLvl.Value = 3
+    dwBackpack:WaitForChild("RO Card").Name = "Shutdown Keycard"
     print("Converted Successfully!")
 end)
