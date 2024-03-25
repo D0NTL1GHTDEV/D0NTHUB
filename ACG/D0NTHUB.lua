@@ -6,6 +6,7 @@ local dwPlayers = game:GetService("Players")
 -- Vars:
 local dwLocalPlayer = dwPlayers.LocalPlayer
 local dwHumanoid = dwLocalPlayer.Character.Humanoid
+local dwBackpack = dwLocalPlayer.Backpack
 
 library.rank = "developer"
 local Wm = library:Watermark("D0NTHUB | alpha build | " .. library:GetUsername() .. " | rank: " .. library.rank)
@@ -26,4 +27,14 @@ end)
 
 local LocalPlayerJumpPowerSlider = MainTab:NewSlider("Custom JumpPower:", "", true, "/", {min = 0, max = 500, default = 50}, function(value)
     dwHumanoid.JumpPower = value
+end)
+
+local CardTab = Init:NewTab("Card")
+
+local CardSection = CardTab:NewSection("Card")
+
+local ConvertRoCardToShutdownCard = CardTab:NewButton("Convert RO Card To Shutdown KeyCard", function()
+    dwBackpack:WaitForChild("RO Card").Name = "Shutdown Keycard"
+    dwBackpack:WaitForChild("RO Card").KeycardLvl.Value = 3
+    print("Converted Successfully!")
 end)
