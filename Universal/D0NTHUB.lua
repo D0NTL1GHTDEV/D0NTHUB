@@ -29,3 +29,23 @@ local Window = Rayfield:CreateWindow({
 local MainTab = Window:CreateTab("Main", 4483362458)
 
 local AimbotSection = MainTab:CreateSection("Aimbot")
+
+local AimlockToggle = MainTab:CreateToggle({
+    Name = "Aimlock",
+    CurrentValue = false,
+    Flag = "aimlock", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        print("aimlock toggle state is: " .. Value)
+    end,
+})
+local LockFovSlider = MainTab:CreateSlider({
+    Name = "Aimlock Fov:",
+    Range = {0, 180},
+    Increment = 10,
+    Suffix = "Pixels",
+    CurrentValue = 0,
+    Flag = "aimlockfov", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        print("aimlock fov is: " .. Value)
+    end,
+})
