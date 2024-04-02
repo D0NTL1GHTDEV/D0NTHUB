@@ -1,43 +1,29 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Consistt/Ui/main/UnLeaked"))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
--- Services:
-local dwPlayers = game:GetService("Players")
+local Window = Rayfield:CreateWindow({
+    Name = "D0NTHUB",
+    LoadingTitle = "D0NTHUB Is Loading.",
+    LoadingSubtitle = "by D0NTL1GHT",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = "D0NTHUB", -- Create a custom folder for your hub/game
+       FileName = "D0NTHUB"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "sirius", -- The Discord invite code, do not include discord.gg/
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "D0NT HUB",
+       Subtitle = "Key System",
+       Note = "Join the discord (discord.gg/sirius)",
+       FileName = "D0NTHUBKey",
+       SaveKey = true,
+       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = "https://pastebin.com/raw/8WPx6un8"
+    }
+})
 
--- Vars:
-local dwLocalPlayer = dwPlayers.LocalPlayer
-local dwHumanoid = dwLocalPlayer.Character:WaitForChild("Humanoid")
-
-library.rank = "developer"
-local wm = library:Watermark("D0NTHUB | alpha build | " .. library:GetUsername() .. " | rank: " .. library.rank)
-
-library.title = "D0NTHUB"
-
-library:Introduction()
-wait(1)
-local Init = library:Init(Enum.KeyCode.Delete)
-
-local MainTab = Init:NewTab("Main")
-
-local LocalPlayerSection = MainTab:NewSection("LocalPlayer")
-
-local LocalPlayerWalkSpeedSlider = MainTab:NewSlider("Custom WalkSpeed:", "", true, "/", {min = 0, max = 500, default = 16}, function(value)
-    dwHumanoid.WalkSpeed = value
-end)
-
-local LocalPlayerJumpPowerSlider = MainTab:NewSlider("Custom JumpPower:", "", true, "/", {min = 0, max = 500, default = 50}, function(value)
-    dwHumanoid.JumpPower = value
-end)
-
-local VisualsTab = Init:NewTab("Visuals")
-
-local ESPSection = VisualsTab:NewSection("ESP")
-
-local HighlightSection = VisualsTab:NewSection("Highlight")
-
-local ScriptLoaderTab = Init:NewTab("Script Loader")
-
-local BasicScriptsSection = ScriptLoaderTab:NewSection("Basic Scripts")
-
-local InfiniteYieldButton = ScriptLoaderTab:NewButton("Infinite Yield", function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
-end)
+local MainTab = Window:CreateTab("Main", 4483362458)
