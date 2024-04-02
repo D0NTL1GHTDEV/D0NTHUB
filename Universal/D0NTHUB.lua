@@ -49,3 +49,19 @@ local LockFovSlider = MainTab:CreateSlider({
         print("aimlock fov is: " .. Value)
     end,
 })
+
+local VisualsTab = Window:CreateTab("Visuals")
+
+local HighlightSection = VisualsTab:CreateSection("Highlight")
+
+local PlayerHighlightToggle = VisualsTab:CreateToggle({
+    Name = "Player Highlight",
+    CurrentValue = false,
+    Flag = "plr_highlight", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+    -- The function that takes place when the toggle is pressed
+    -- The variable (Value) is a boolean on whether the toggle is true or false
+    end,
+ })
+
+local ESPSection = VisualsTab:CreateSection("ESP")
