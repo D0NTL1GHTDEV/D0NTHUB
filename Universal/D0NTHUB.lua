@@ -28,4 +28,4 @@ local Window = Rayfield:CreateWindow({
 
 local MainTab = Window:CreateTab("Main", 4483362458)
 
-local AimbotSection = Tab:CreateSection("Aimbot")
+local AimbotSection = MainTab:CreateSection("Aimbot")
