@@ -35,7 +35,7 @@ local AimlockToggle = MainTab:CreateToggle({
     CurrentValue = false,
     Flag = "aimlock", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
-        print("aimlock toggle state is: " .. Value = "on" or "off")
+        
     end,
 })
 local LockFovSlider = MainTab:CreateSlider({
